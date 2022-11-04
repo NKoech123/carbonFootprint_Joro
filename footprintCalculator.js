@@ -17,12 +17,11 @@ const calculateFootPrint = async (carbonWeightValue, transactionAmount, vegetari
   let footprint_total = parseFloat(carbonWeightValue) * parseFloat(transactionAmount) 
   footprint_total *= vegetarianFactor
   return footprint_total
-
 }
 
 const getFootprint = async() => {
 
-  let res, vegetarianFactor, footprint_total,obj
+  let res, vegetarianFactor, footprint_total, obj
   vegetarianFactor = 1
   const transactions = await Transaction.findAll({order: [['transactionDate', 'ASC']]});
   const userID_isVegeterianMapper = await userID_isVegeterianMapping()
@@ -49,9 +48,8 @@ const getFootprint = async() => {
           transactionAmount, 
           vegetarianFactor
         );
-   
+
       res[carbonCategory] += footprint_total
-   
     }
   
     return {footprint: {res}};
@@ -75,16 +73,16 @@ const getFootprintPerDayTransactionData = async() =>{
  }
 
   for (let {userId, carbonCategory, transactionAmount, transactionDate} of transactions) {
-
       carbonWeightValue = 0;
+
       if (carbonCategory !== "NO_CARBON_CATEGORY"){
         carbonWeightValue = carbonWeights[carbonCategory]
-      }
+      };
       
       if (userID_isVegeterianMapper[userId]) {
         vegetarianFactor = 0.3
         console.log('User is Vegan!')
-      }
+      };
 
       footprint_total = await calculateFootPrint(carbonWeightValue, 
           transactionAmount, 
@@ -95,16 +93,15 @@ const getFootprintPerDayTransactionData = async() =>{
         resPerDay[transactionDate][carbonCategory] += footprint_total
       } else {
         resPerDay[transactionDate] = {
-          food: 0,
-          goods_and_services: 0,
-          home:0,
-          transport: 0,
+            food: 0,
+            goods_and_services: 0,
+            home:0,
+            transport: 0,
         }
         resPerDay[transactionDate][carbonCategory] += footprint_total
-        
       }
-    
   }
+  // create iterable list of objects
   res = []
   for (const [txtDate,footPrint] of Object.entries(resPerDay)){
     obj = {}
@@ -114,10 +111,10 @@ const getFootprintPerDayTransactionData = async() =>{
     obj[txtDate] = footPrint
     res.push(obj)
   }
+
   console.log(res)
   return {footprintPerDay: res};
 }
-getFootprintPerDayTransactionData()
 
 const getTransactions = async () => {
   const transactions = await Transaction.findAll({order: [['transactionDate', 'ASC']]});
