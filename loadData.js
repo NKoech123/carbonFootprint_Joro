@@ -80,7 +80,6 @@ const insertTransactions = async () => {
             external_transactions.push(txt)
         }
     
-        // return all_txt
         return {dataFromExternalFinancialSources: external_transactions}
         
       }catch (err) {
