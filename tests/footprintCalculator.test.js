@@ -40,10 +40,13 @@ describe("footprintCalculator", function () {
       const transactionsObject = await getTransactions();
       const transactions = transactionsObject.transactions;
       const transactionUser = await transactions[0].getUser();
-      expect(transactions.length).to.equal(2);
+      expect(transactions.length).to.equal(17);
       expect(transactions[0].memo).to.equal(testTransaction1.memo);
       expect(transactionUser.id).to.equal(testUser.id);
     });
 
   });
 })
+
+// Test - parsing csv data and convert to objects
+// inserting transactions is covered by endpoint loading data.

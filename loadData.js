@@ -57,7 +57,7 @@ const insertTransactions = async () => {
     }
   
     try {
-        let all_txt = []
+        let external_transactions = []
         for (const txtData of transationData){
             userId = txtData.userId
             memo = txtData.memo
@@ -77,10 +77,11 @@ const insertTransactions = async () => {
             transactionDate = txtData.date
           
             const txt = await Transaction.create({ userId, memo, carbonCategory, transactionAmount,transactionDate})
-            all_txt.push(txt)
+            external_transactions.push(txt)
         }
     
-        return all_txt
+        // return all_txt
+        return {dataFromExternalFinancialSources: external_transactions}
         
       }catch (err) {
           console.log(err)

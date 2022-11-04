@@ -120,6 +120,7 @@ const getTransactions = async () => {
 }
 
 module.exports = {
+  calculateFootPrint,
   getFootprint,
   getTransactions,
   getFootprintPerDayTransactionData

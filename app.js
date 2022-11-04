@@ -5,10 +5,10 @@ const { getFootprint, getTransactions, getFootprintPerDayTransactionData } = req
 const {insertTransactions} = require("./loadData")
 const { Transaction } = require("./models");
 
-app.get('/insertTransactions', async (req, res) => {
+app.get('/dataFromExternalFinancialSources', async (req, res) => {
   try{
-    const transationData = await insertTransactions();
-    return res.json(transationData);
+    const dataFromExternalSource = await insertTransactions();
+    return res.json(dataFromExternalSource);
   }catch(err){
     console.log(err)
     return res.status(500).json(err)
