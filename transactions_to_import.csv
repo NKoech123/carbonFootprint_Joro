@@ -1,0 +1,16 @@
+userId,memo,amount,category1,category2,date
+1,Memo 1,45.92,restaurants,fast food,2020-03-03
+1,Memo 2,453.24,shops,grocery,2020-03-03
+1,Memo 3,76.46,financial,bank charge,2020-03-03
+1,Memo 4,201.08,shops,furniture,2020-03-04
+1,Memo 5,123.92,online,entertainment,2020-03-05
+1,Memo 6,399.92,auto,gasoline,2020-03-05
+1,Memo 7,5.55,travel,bus,2020-03-05
+2,Memo 8,430.18,transportation,flight,2020-03-03
+2,Memo 10,137.98,restaurants,fast food,2020-03-03
+2,Memo 11,11.50,restaurants,coffee,2020-03-04
+2,Memo 12,285.74,shops,general,2020-03-04
+2,Memo 13,140.46,shops,clothes,2020-03-04
+2,Memo 14,116.87,shops,food,2020-03-05
+2,Memo 15,118.00,financial,bank charge,2020-03-05
+2,Memo 16,278.15,shops,food,2020-03-05

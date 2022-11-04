@@ -1,0 +1,11 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "db/joro-development.sqlite"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "db/joro-test.sqlite",
+    "logging": false
+  }
+}
