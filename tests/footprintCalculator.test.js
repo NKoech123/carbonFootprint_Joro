@@ -1,5 +1,5 @@
 const { expect }  = require("chai");
-const { getFootprint, getTransactions } = require("../footprintCalculator");
+const { getTransactions } = require("../footprintCalculator");
 const models = require("../models");
 
 describe("footprintCalculator", function () {
@@ -48,5 +48,3 @@ describe("footprintCalculator", function () {
   });
 })
 
-// Test - parsing csv data and convert to objects
-// inserting transactions is covered by endpoint loading data.

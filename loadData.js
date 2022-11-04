@@ -35,7 +35,7 @@ const insertTransactions = async () => {
     let userId, memo, transactionAmount , carbonCategory, transactionDate
   
     const transationData = await loadDataFromCSV();
-  
+    console.log(transationData)
     const txtCategoryCustomMappingRules = {
       gasoline: "transport",
       flight: "transport",
@@ -87,6 +87,7 @@ const insertTransactions = async () => {
           console.log(err)
         }
   }
+
  module.exports = {
     loadDataFromCSV, 
     insertTransactions
