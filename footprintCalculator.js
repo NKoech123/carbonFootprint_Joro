@@ -54,7 +54,6 @@ const getFootprint = async() => {
   
     return {footprint: {res}};
   }
-getFootprint()
 
 const getFootprintPerDayTransactionData = async() =>{
 
@@ -78,10 +77,9 @@ const getFootprintPerDayTransactionData = async() =>{
       if (carbonCategory !== "NO_CARBON_CATEGORY"){
         carbonWeightValue = carbonWeights[carbonCategory]
       };
-      
       if (userID_isVegeterianMapper[userId]) {
         vegetarianFactor = 0.3
-        console.log('User is Vegan!')
+        console.log('Yay, User is Vegan! Earth thanks you :)')
       };
 
       footprint_total = await calculateFootPrint(carbonWeightValue, 
